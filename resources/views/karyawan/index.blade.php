@@ -28,6 +28,7 @@
                     <th>Gaji</th>
                     <th>Tanggal Masuk</th>
                     <th>Keterangan</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -41,6 +42,11 @@
                     <td>Rp {{ number_format($karyawan->gaji, 0, ', ', '. ') }}</td>
                     <td>{{ $karyawan->tanggal_masuk }}</td>
                     <td>{{ $karyawan->keterangan ?? '-' }}</td>
+                    <td>
+                        <a href="{{ route('karyawans.edit', $karyawan->id) }}">
+                            Edit
+                        </a>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
