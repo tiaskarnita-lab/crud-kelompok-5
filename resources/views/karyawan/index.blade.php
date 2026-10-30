@@ -5,6 +5,18 @@
     <body>
         <h1>Daftar Karyawan</h1>
 
+        <p>
+            <a href="{{ route('karyawans.create') }}">
+                Tambah Karyawan
+            </a>
+        </p>
+
+        @session('success')
+        <p style="color: blue;">
+            {{ session('success') }}
+        </p>
+        @endsession
+
         <table border="1" cellpadding="8" cellspacing="0">
             <thead>
                 <tr>
