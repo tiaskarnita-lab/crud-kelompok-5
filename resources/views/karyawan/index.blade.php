@@ -3,6 +3,7 @@
         <title>Daftar Karyawan</title>
     </head>
     <body>
+
         <h1>Daftar Karyawan</h1>
 
         <p>
@@ -12,12 +13,12 @@
         </p>
 
         @session('success')
-        <p style="color: blue;">
+        <p style="color: blueviolet;">
             {{ session('success') }}
         </p>
         @endsession
 
-        <table border="1" cellpadding="8" cellspacing="0">
+        <table border="1" cellpadding="1" cellspacing="0">
             <thead>
                 <tr>
                     <th>No</th>
@@ -44,14 +45,15 @@
                     <td>{{ $karyawan->keterangan ?? '-' }}</td>
                     <td>
                         <a href="{{ route('karyawans.edit', $karyawan->id) }}">
-                            Edit
+                            <button style="background: blue; color:white">Edit</button>
                         </a>
                         <form action="{{ route('karyawans.destroy', $karyawan->id) }}"
                             method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit"
-                            onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
+                            onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')"
+                            style="background: red; color:white">
                             Hapus
                             </button>
                     </td>
